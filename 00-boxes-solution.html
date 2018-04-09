@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assignment: DOM manipulation with D3.js</title>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<style type="text/css">
+.grey-box {
+	border: 1px solid black;
+	background:#DDDCDC;
+	text-align: center;
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+	float: left;
+}
+</style>
+</head>
+
+<body>
+
+<div></div>
+<div></div>
+<div></div>
+
+<script type="text/javascript">
+
+// assignment solution
+d3.selectAll("div") 
+	.attr("class", "grey-box")
+	.each(function (d, i) { d3.select(this).append("h1").text(i);});
+	
+</script>
+</body>
+</html>
