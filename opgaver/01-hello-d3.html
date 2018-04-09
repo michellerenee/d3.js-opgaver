@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello d3</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    .red-box{
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+
+<!-- an element to select -->
+<p id="output"></p>
+
+<p>... some text</p>
+<p>... some more text</p>
+
+<script>
+  d3.select('p#output').text('Hello d3.js!');
+
+  // d3 styling
+  d3.select('p').style('font-size', '30px');
+  d3.select('p').style('font-family', 'Verdana');
+  d3.select('p').style('font-weight', 'Bold');
+
+  // select all
+  d3.selectAll('p').attr('class', 'red-box');
+
+  // each loop - anonymous function - append
+  d3.selectAll('p')
+      .each(function (d, i) {
+          d3.select(this).append('h2').text(i);
+      })
+</script>
+
+</body>
+</html>
